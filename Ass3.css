@@ -1,0 +1,228 @@
+:root {
+    --custom-height: 10%;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    background-color: #B98161;
+    height: var(--custom-height);
+    width: 100%;
+}
+
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 20px 0px 10px 10%;
+}
+
+.logo > img {
+    width: 40%;
+}
+
+.nav_bar {
+    text-decoration: none;
+    /* display: inline-block; */
+    list-style: none;
+    margin-left: 500px;
+    float: right;
+    margin: 2.1% 5% 10px 0px;
+} 
+
+.nav_bar a {
+    margin: 40px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Aldrich", sans-serif;
+    outline: none;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.nav_bar a:hover {
+    outline: none;
+    text-shadow: 0 0 5px #FC9053;
+}
+
+#home {
+    width: 100%;
+    height: 90vh;
+    background-position: center;
+    background-image: url(img/restaurant_kitchen_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+#home h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+
+    font-family: 'Optima', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 350%;
+    color: #fff;
+
+    text-shadow: 2px 0 0 #FF5C00, -2px 0 0 #FF5C00, 0 2px 0 #FF5C00, 0 -2px 0 #FF5C00, 1px 1px #FF5C00, -1px -1px 0 #FF5C00, 1px -1px 0 #FF5C00, -1px 1px 0 #FF5C00;
+
+    z-index: 3;
+}
+
+#home img {
+    position: absolute;
+    width: 58%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* left: 20vw;
+    top: 15%; */
+    z-index: 2;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.bread-select {
+    color: black;
+}
+
+.bread-select option[disabled]:first-child {
+    color: grey;
+}
+
+
+.container {
+    overflow: auto;
+}
+
+.box1, .box2 {
+    height: 90vh;
+    float: left; /* 左浮动 */
+    box-sizing: border-box; /* 考虑边框和填充在内的盒模型 */
+    border: 1px solid #fff; /* 添加边框样式，可根据需要进行调整 */
+    /* padding: 10px; 添加内边距，可根据需要进行调整 */
+}
+
+.box1 {
+    width: 40%;
+    background-color: transparent;
+    background-color: #EDD1C1;
+}
+
+.box2 {
+    width: 60%;
+    background-color: lightgrey;
+
+    padding: 5vh 10vw;
+    background-color: #EDD1C1;
+}
+
+#imageUpload {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;    
+}
+/*   
+#imageUpload img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+   */
+label, input, textarea, select {
+    display: block;
+    margin-bottom: 5px; /* distance between tags */
+}
+
+label {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 0.7vh 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 0.7vh 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    resize: none;
+}
+
+.description {
+    height: 10vh;
+}
+
+select {
+    width: 100%;
+    padding: 0.7vh 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.sauce-select {
+    display: inline-block;
+    width: 32%;
+    padding: 0.7vh 15px;
+    margin: 8px 0.8% 8px 0px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    
+}
+
+.sauce-select-2 {
+    display: inline-block;
+    width: 32%;
+    padding: 0.7vh 15px;
+    margin: 8px 0px 8px 0px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    
+}
+
+input[type=submit] {
+    width: 50%;
+    padding: 2vh 20px;
+    margin: 4vh 20%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-color: #F88763;
+    color: white;
+}
+
+

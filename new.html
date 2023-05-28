@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Upload Example</title>
+  </head>
+  <body>
+    <input
+      type="file"
+      id="imageUpload"
+      accept="image/*"
+      onchange="handleImageUpload(event)"
+    />
+    <div id="imagePreview"></div>
+    <div id="imageContainer2"></div>
+
+    <script>
+      function handleImageUpload(event) {
+        const file = event.target.files[0]; // 获取用户上传的图片文件
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const imageContainer1 = document.getElementById("imageContainer1");
+          const imageContainer2 = document.getElementById("imageContainer2");
+
+          // 创建新的 <img> 元素并设置图片源
+          const imgElement = document.createElement("img");
+          imgElement.src = e.target.result;
+
+          // 创建两个新的 <div> 元素
+          const newDiv1 = document.createElement("div");
+          const newDiv2 = document.createElement("div");
+
+          // 将 <img> 元素添加到相应的 <div> 元素中
+          newDiv1.appendChild(imgElement.cloneNode(true));
+          newDiv2.appendChild(imgElement.cloneNode(true));
+
+          // 将新的 <div> 元素添加到相应的容器中
+          imageContainer1.appendChild(newDiv1);
+          imageContainer2.appendChild(newDiv2);
+        };
+
+        reader.readAsDataURL(file); // 读取图片文件并转换为 Data URL
+
+        // 清除输入框的值，以便可以多次选择同一张图片进行上传
+        event.target.value = "";
+      }
+    </script>
+  </body>
+</html>
