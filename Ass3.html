@@ -33,7 +33,7 @@
         <!-- Add new page -->
         <div id="AddNewItem" class="container" style="display: none">
           <div class="box1" id="imagePreview">
-            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+            <input type="file" id="imageUpload" accept="image/*">
           </div>
           <div class="box2">
             <form action="/submit" methon="post">
@@ -62,7 +62,7 @@
               </select>
               
               <label for="sauce">Sauce</label>
-              <select name="sauce" id="mySelect" class="sauce-select" required>
+              <select name="sauce1" id="mySelect" class="sauce-select" required>
                 <option value="" disabled selected hidden>Choose the sauce</option>
                 <option value="None">None</option>
                 <option value="Ketchup">Ketchup</option>
@@ -77,7 +77,7 @@
                 <option value="PickleRelish">Pickle relish</option>
               </select>
   
-              <select name="sauce" id="mySelect" class="sauce-select" required>
+              <select name="sauce2" id="mySelect" class="sauce-select" required>
                 <option value="" disabled selected hidden>Choose the sauce</option>
                 <option value="None">None</option>
                 <option value="Ketchup">Ketchup</option>
@@ -92,7 +92,7 @@
                 <option value="PickleRelish">Pickle relish</option>
               </select>
   
-              <select name="sauce" id="mySelect" class="sauce-select-2" required>
+              <select name="sauce3" id="mySelect" class="sauce-select-2" required>
                 <option value="" disabled selected hidden>Choose the sauce</option>
                 <option value="None">None</option>
                 <option value="Ketchup">Ketchup</option>

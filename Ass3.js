@@ -55,27 +55,46 @@ function previewImage(event) {
     }
 }
 
-// Create new div
-function createNewDiv(event) {
-    event.preventDefault();
-  
-    const textarea = document.getElementById('myTextarea');
-    const select = document.getElementById('mySelect');
-    const input = document.getElementById('myInput');
-    const text = textarea.value;
-    const selectedOption = select.value;
-    const inputValue = input.value;
-    const imageUpload = document.getElementById('imageUpload');
-    const imageFile = imageUpload.files[0]; // The img file user uploaded
+// const AddNewItem = document.getElementById("AddNewItem")
+// const MealsList = document.getElementById("MealsList")
 
-    // The img that users uploaded
-    if (text.trim() !== '') {
-      const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<span>${inputValue}</span><br>${text}`;
-      newDiv.style.border = '1px solid black';
+// var mealsList = [];
 
-      const mealsList = document.getElementById('MealsList');
-      mealsList.appendChild(newDiv);
-    }
-    
-}
+// function addMeal(name, description, ingredients, bread, sauce1, sauce2, sauce3) {
+//   let meal = {
+//     name,
+//     description,
+//     id: Date.now(),
+//     date: new Date().toISOString(),
+//     ingredients,
+//     bread,
+//     sauce1,
+//     sauce2,
+//     sauce3
+//   }
+//   MealsList.push(meal);
+//   displayTask(meal);
+// }
+
+// AddNewItem.addEventListener("submit", function(event) {
+//   event.preventDefault();
+//   addMeal{
+//     AddNewItem.elements.name.value;
+//     AddNewItem.elements.description.value;
+//     AddNewItem.elements.ingredients.value;
+//     AddNewItem.elements.bread.value;
+//     AddNewItem.elements.sauce1.value;
+//     AddNewItem.elements.sauce2.value;
+//     AddNewItem.elements.sauce3.value
+//   }
+// })
+
+// function displayMeal(meal) {
+//   let item = document.createElement("div");
+//   item.setAttribute("data-id", meal.id);
+//   item.innerHTML =
+//     `<p><strong>${meal.name}</strong><br>${meal.description}</p>`;
+//   MealsList.appendChild(item);
+
+//   AddNewItem.reset();
+// }
