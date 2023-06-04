@@ -98,3 +98,45 @@ function previewImage(event) {
 
 //   AddNewItem.reset();
 // }
+
+function createNewDiv(event) {
+  event.preventDefault();
+
+  const textarea = document.getElementById('myTextarea');
+  const textarea2 = document.getElementById('myTextarea2');
+  const select = document.getElementById('mySelect');
+  const input = document.getElementById('myInput');
+  const select1 = document.getElementById('mySelect1');
+  const select2 = document.getElementById('mySelect2');
+  const select3 = document.getElementById('mySelect3');
+
+  const text = textarea.value;
+  const ingredients = textarea2.value;
+  const selectedOption = select.value;
+  const inputValue = input.value;
+  const sauce1 = select1.value;
+  const sauce2 = select2.value;
+  const sauce3 = select3.value;
+  const imageUpload = document.getElementById('imageUpload');
+
+  // The img that users uploaded
+  if (text.trim() !== '') {
+    const newDiv = document.createElement('div');
+    newDiv.innerHTML = `<span>Name:${inputValue}</span><br>
+    Introduction:${text}<br>
+    Ingredients:${ingredients}<br>
+    Bread:${selectedOption}<br>
+    Sauce:${sauce1}, ${sauce2} and ${sauce3}`;
+
+    newDiv.style.borderRadius = '10px';
+    newDiv.style.padding = '2vh 0 2vh 2vh';
+    newDiv.style.margin = '5% 5% 5% 6%';
+    newDiv.style.width = '20%';
+
+    newDiv.style.backgroundColor = 'white';
+    newDiv.style.display = 'inline-block';
+
+    const mealsList = document.getElementById('MealsList');
+    mealsList.appendChild(newDiv);
+  }
+}

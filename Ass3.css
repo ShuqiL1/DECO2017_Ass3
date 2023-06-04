@@ -7,6 +7,7 @@ body {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-color: #EDD1C1;
 }
 
 header {
@@ -113,7 +114,6 @@ h1 {
     height: 90vh;
     float: left; /* 左浮动 */
     box-sizing: border-box; /* 考虑边框和填充在内的盒模型 */
-    border: 1px solid #fff; /* 添加边框样式，可根据需要进行调整 */
     /* padding: 10px; 添加内边距，可根据需要进行调整 */
 }
 
@@ -121,6 +121,7 @@ h1 {
     width: 40%;
     background-color: transparent;
     background-color: #EDD1C1;
+    border-right: 1px solid #fff
 }
 
 .box2 {
@@ -225,4 +226,25 @@ input[type=submit] {
     color: white;
 }
 
+#MealsList.div {
+    display: inline;
+    width: 20%;
+    height: 30%;
+    margin: 0 10%;
+}
 
+.AddNewBurgerButton {
+    opacity: 1;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.AddNewBurgerButton:hover{
+    background-color: antiquewhite;
+    color:rgba(0, 0, 0, 0.6)
+}
+
+.AddNewBurgerButton:active{
+    background-color:rgb(252, 144, 83, 0.4);
+    color: #fff;
+}
