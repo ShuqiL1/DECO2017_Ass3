@@ -55,49 +55,6 @@ function previewImage(event) {
     }
 }
 
-// const AddNewItem = document.getElementById("AddNewItem")
-// const MealsList = document.getElementById("MealsList")
-
-// var mealsList = [];
-
-// function addMeal(name, description, ingredients, bread, sauce1, sauce2, sauce3) {
-//   let meal = {
-//     name,
-//     description,
-//     id: Date.now(),
-//     date: new Date().toISOString(),
-//     ingredients,
-//     bread,
-//     sauce1,
-//     sauce2,
-//     sauce3
-//   }
-//   MealsList.push(meal);
-//   displayTask(meal);
-// }
-
-// AddNewItem.addEventListener("submit", function(event) {
-//   event.preventDefault();
-//   addMeal{
-//     AddNewItem.elements.name.value;
-//     AddNewItem.elements.description.value;
-//     AddNewItem.elements.ingredients.value;
-//     AddNewItem.elements.bread.value;
-//     AddNewItem.elements.sauce1.value;
-//     AddNewItem.elements.sauce2.value;
-//     AddNewItem.elements.sauce3.value
-//   }
-// })
-
-// function displayMeal(meal) {
-//   let item = document.createElement("div");
-//   item.setAttribute("data-id", meal.id);
-//   item.innerHTML =
-//     `<p><strong>${meal.name}</strong><br>${meal.description}</p>`;
-//   MealsList.appendChild(item);
-
-//   AddNewItem.reset();
-// }
 
 function createNewDiv(event) {
   event.preventDefault();
@@ -119,7 +76,6 @@ function createNewDiv(event) {
   const sauce3 = select3.value;
   const imageUpload = document.getElementById('imageUpload');
 
-  // The img that users uploaded
   if (text.trim() !== '') {
     const newDiv = document.createElement('div');
     newDiv.innerHTML = `<span>Name:${inputValue}</span><br>
@@ -129,12 +85,37 @@ function createNewDiv(event) {
     Sauce:${sauce1}, ${sauce2} and ${sauce3}`;
 
     newDiv.style.borderRadius = '10px';
-    newDiv.style.padding = '2vh 0 2vh 2vh';
+    newDiv.style.padding = '2vh 2vh 2vh 2vh';
     newDiv.style.margin = '5% 5% 5% 6%';
     newDiv.style.width = '20%';
 
     newDiv.style.backgroundColor = 'white';
     newDiv.style.display = 'inline-block';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'DELETE THIS BURGER';
+    deleteButton.style.display = 'block';
+    deleteButton.style.fontSize = '12px';
+    deleteButton.style.borderRadius = '10px';
+    deleteButton.style.background = 'none';
+    deleteButton.style.cursor = 'pointer';
+    deleteButton.style.padding = '5%';
+    deleteButton.style.margin = '6% auto 5%';
+    deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
+    deleteButton.addEventListener('click', function() {
+      newDiv.remove();
+    });
+
+    // Add transition effect on hover
+    deleteButton.style.transition = 'background-color 0.3s ease';
+    deleteButton.addEventListener('mouseenter', function() {
+      deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.2)';
+    });
+    deleteButton.addEventListener('mouseleave', function() {
+      deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
+    });
+
+    newDiv.appendChild(deleteButton);
 
     const mealsList = document.getElementById('MealsList');
     mealsList.appendChild(newDiv);
