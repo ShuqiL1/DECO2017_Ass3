@@ -248,3 +248,16 @@ input[type=submit] {
     background-color:rgb(252, 144, 83, 0.4);
     color: #fff;
 }
+
+#MealsList {
+    flex-wrap: wrap;
+}
+
+.my-div {
+    border-radius: 10px;
+    padding: 2vh;
+    margin: 50px 60px;
+    width: 20%;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+}

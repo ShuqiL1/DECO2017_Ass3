@@ -1,15 +1,20 @@
 // able to change the page with nav bar
 function navigateTo(route) {
-    var contentDivs = document.querySelectorAll('#content > div');
-    for (var i = 0; i < contentDivs.length; i++) {
-        var div = contentDivs[i];
-        if (div.id === route) {
-            div.style.display = 'block';
-        } else {
-            div.style.display = 'none';
-        }
+  var contentDivs = document.querySelectorAll('#content > div');
+  for (var i = 0; i < contentDivs.length; i++) {
+    var div = contentDivs[i];
+    if (div.id === route) {
+      if (route === 'MealsList') {
+        div.style.display = 'flex';
+      } else {
+        div.style.display = 'block';
+      }
+    } else {
+      div.style.display = 'none';
     }
+  }
 }
+
 
 // upload image with preview
 function previewImage(event) {
@@ -55,7 +60,6 @@ function previewImage(event) {
     }
 }
 
-
 function createNewDiv(event) {
   event.preventDefault();
 
@@ -74,50 +78,67 @@ function createNewDiv(event) {
   const sauce1 = select1.value;
   const sauce2 = select2.value;
   const sauce3 = select3.value;
-  const imageUpload = document.getElementById('imageUpload');
 
   if (text.trim() !== '') {
     const newDiv = document.createElement('div');
-    newDiv.innerHTML = `<span>Name:${inputValue}</span><br>
-    Introduction:${text}<br>
-    Ingredients:${ingredients}<br>
-    Bread:${selectedOption}<br>
-    Sauce:${sauce1}, ${sauce2} and ${sauce3}`;
+    newDiv.className = 'my-div';
+    newDiv.innerHTML = `<span>Humburger Name:${inputValue}</span>
+    <br>Introduction:${text}
+    <br>Ingredients:${ingredients}
+    <br>Bread:${selectedOption}
+    <br>Sauce: ${sauce1}, ${sauce2}, and ${sauce3}`;
+    newDiv.style.transition = 'transform 0.3s ease';
+    newDiv.setAttribute('onmouseover', 'enlargeBox(this)');
+    newDiv.setAttribute('onmouseout', 'resetBox(this)');
 
-    newDiv.style.borderRadius = '10px';
-    newDiv.style.padding = '2vh 2vh 2vh 2vh';
-    newDiv.style.margin = '5% 5% 5% 6%';
-    newDiv.style.width = '20%';
+    // newDiv.addEventListener('mouseenter', function() {
+    //   newDiv.style.transform = 'height: 50%';
+    //   newDiv.innerHTML += `<br>Ingredients:${ingredients}<br>
+    //   Bread:${selectedOption}<br>
+    //   <br>Sauce: ${sauce1}, ${sauce2}, and ${sauce3}`;
+    // });
 
-    newDiv.style.backgroundColor = 'white';
-    newDiv.style.display = 'inline-block';
+    // newDiv.addEventListener('mouseleave', function() {
+    //   newDiv.style.transform = 'height: 30%';
+    //   newDiv.innerHTML = `<span>Name:${inputValue}</span><br>
+    //   Introduction:${text}`;
+    // });
 
-    const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = 'DELETE THIS BURGER';
-    deleteButton.style.display = 'block';
-    deleteButton.style.fontSize = '12px';
-    deleteButton.style.borderRadius = '10px';
-    deleteButton.style.background = 'none';
-    deleteButton.style.cursor = 'pointer';
-    deleteButton.style.padding = '5%';
-    deleteButton.style.margin = '6% auto 5%';
-    deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
-    deleteButton.addEventListener('click', function() {
-      newDiv.remove();
-    });
+
+    // const deleteButton = document.createElement('button');
+    // deleteButton.innerHTML = 'DELETE THIS BURGER';
+    // deleteButton.style.display = 'block';
+    // deleteButton.style.fontSize = '12px';
+    // deleteButton.style.borderRadius = '10px';
+    // deleteButton.style.background = 'none';
+    // deleteButton.style.cursor = 'pointer';
+    // deleteButton.style.padding = '5%';
+    // deleteButton.style.margin = '6% auto 5%';
+    // deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
+    // deleteButton.addEventListener('click', function() {
+    //   newDiv.remove();
+    // });
 
     // Add transition effect on hover
-    deleteButton.style.transition = 'background-color 0.3s ease';
-    deleteButton.addEventListener('mouseenter', function() {
-      deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.2)';
-    });
-    deleteButton.addEventListener('mouseleave', function() {
-      deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
-    });
+    // deleteButton.style.transition = 'background-color 0.3s ease';
+    // deleteButton.addEventListener('mouseenter', function() {
+    //   deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.2)';
+    // });
+    // deleteButton.addEventListener('mouseleave', function() {
+    //   deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
+    // });
 
-    newDiv.appendChild(deleteButton);
+    // newDiv.appendChild(deleteButton);
 
     const mealsList = document.getElementById('MealsList');
-    mealsList.appendChild(newDiv);
+    mealsList.appendChild(newDiv); 
   }
+}
+
+function enlargeBox(element) {
+  element.style.transform = 'scale(1.2)';
+}
+
+function resetBox(element) {
+  element.style.transform = 'scale(1)';
 }

@@ -1,62 +1,97 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Image Upload Example</title>
+    <style>
+      .MealsList {
+        display: flex;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin-right: 10px;
+        transition: transform 0.3s ease-in-out;
+        padding: 2vh;
+        margin: 50px;
+      }
+    </style>
   </head>
   <body>
-    <input
-      type="file"
-      id="imageUpload"
-      accept="image/*"
-      onchange="handleImageUpload(event)"
-    />
-    <div id="imagePreview"></div>
-    <div id="imageContainer2"></div>
+    <div class="MealsList">
+      <div
+        class="box"
+        onmouseover="enlargeBox(this)"
+        onmouseout="resetBox(this)"
+      ></div>
+      <div
+        class="box"
+        onmouseover="enlargeBox(this)"
+        onmouseout="resetBox(this)"
+      ></div>
+      <div
+        class="box"
+        onmouseover="enlargeBox(this)"
+        onmouseout="resetBox(this)"
+      ></div>
+    </div>
 
     <script>
-      function handleImageUpload(event) {
-        const file = event.target.files[0]; // 获取用户上传的图片文件
-        const reader = new FileReader();
+      function enlargeBox(element) {
+        element.style.transform = "scale(1.2)";
+      }
 
-        reader.onload = function (e) {
-          const imageContainer1 = document.getElementById("imageContainer1");
-          const imageContainer2 = document.getElementById("imageContainer2");
-
-          // 创建新的 <img> 元素并设置图片源
-          const imgElement = document.createElement("img");
-          imgElement.src = e.target.result;
-
-          // 创建两个新的 <div> 元素
-          const newDiv1 = document.createElement("div");
-          const newDiv2 = document.createElement("div");
-
-          // 将 <img> 元素添加到相应的 <div> 元素中
-          newDiv1.appendChild(imgElement.cloneNode(true));
-          newDiv2.appendChild(imgElement.cloneNode(true));
-
-          // 将新的 <div> 元素添加到相应的容器中
-          imageContainer1.appendChild(newDiv1);
-          imageContainer2.appendChild(newDiv2);
-        };
-
-        reader.readAsDataURL(file); // 读取图片文件并转换为 Data URL
-
-        // 清除输入框的值，以便可以多次选择同一张图片进行上传
-        event.target.value = "";
+      function resetBox(element) {
+        element.style.transform = "scale(1)";
       }
     </script>
   </body>
 </html>
 
-// Create new div // function createNewDiv(event) { // event.preventDefault();
-// const textarea = document.getElementById('myTextarea'); // const select =
-document.getElementById('mySelect'); // const input =
-document.getElementById('myInput'); // const text = textarea.value; // const
-selectedOption = select.value; // const inputValue = input.value; // const
-imageUpload = document.getElementById('imageUpload'); // const imageFile =
-imageUpload.files[0]; // The img file user uploaded // // The img that users
-uploaded // if (text.trim() !== '') { // const newDiv =
-document.createElement('div'); // newDiv.innerHTML = `<span>${inputValue}</span
-><br />${text}`; // newDiv.style.border = '1px solid black'; // const mealsList
-= document.getElementById('MealsList'); // mealsList.appendChild(newDiv); // }
-// }
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin-right: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="box"
+        onmouseover="enlargeBox(this)"
+        onmouseout="resetBox(this)"
+      ></div>
+      <div
+        class="box"
+        onmouseover="enlargeBox(this)"
+        onmouseout="resetBox(this)"
+      ></div>
+      <div
+        class="box"
+        onmouseover="enlargeBox(this)"
+        onmouseout="resetBox(this)"
+      ></div>
+    </div>
+
+    <script>
+      function enlargeBox(element) {
+        element.style.transform = "scale(1.2)";
+      }
+
+      function resetBox(element) {
+        element.style.transform = "scale(1)";
+      }
+    </script>
+  </body>
+</html>
