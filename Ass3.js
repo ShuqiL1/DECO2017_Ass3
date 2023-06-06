@@ -91,44 +91,30 @@ function createNewDiv(event) {
     newDiv.setAttribute('onmouseover', 'enlargeBox(this)');
     newDiv.setAttribute('onmouseout', 'resetBox(this)');
 
-    // newDiv.addEventListener('mouseenter', function() {
-    //   newDiv.style.transform = 'height: 50%';
-    //   newDiv.innerHTML += `<br>Ingredients:${ingredients}<br>
-    //   Bread:${selectedOption}<br>
-    //   <br>Sauce: ${sauce1}, ${sauce2}, and ${sauce3}`;
-    // });
-
-    // newDiv.addEventListener('mouseleave', function() {
-    //   newDiv.style.transform = 'height: 30%';
-    //   newDiv.innerHTML = `<span>Name:${inputValue}</span><br>
-    //   Introduction:${text}`;
-    // });
-
-
-    // const deleteButton = document.createElement('button');
-    // deleteButton.innerHTML = 'DELETE THIS BURGER';
-    // deleteButton.style.display = 'block';
-    // deleteButton.style.fontSize = '12px';
-    // deleteButton.style.borderRadius = '10px';
-    // deleteButton.style.background = 'none';
-    // deleteButton.style.cursor = 'pointer';
-    // deleteButton.style.padding = '5%';
-    // deleteButton.style.margin = '6% auto 5%';
-    // deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
-    // deleteButton.addEventListener('click', function() {
-    //   newDiv.remove();
-    // });
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'DELETE THIS BURGER';
+    deleteButton.style.display = 'block';
+    deleteButton.style.fontSize = '12px';
+    deleteButton.style.borderRadius = '10px';
+    deleteButton.style.background = 'none';
+    deleteButton.style.cursor = 'pointer';
+    deleteButton.style.padding = '5%';
+    deleteButton.style.margin = '6% auto 5%';
+    deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
+    deleteButton.addEventListener('click', function() {
+      newDiv.remove();
+    });
 
     // Add transition effect on hover
-    // deleteButton.style.transition = 'background-color 0.3s ease';
-    // deleteButton.addEventListener('mouseenter', function() {
-    //   deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.2)';
-    // });
-    // deleteButton.addEventListener('mouseleave', function() {
-    //   deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
-    // });
+    deleteButton.style.transition = 'background-color 0.3s ease';
+    deleteButton.addEventListener('mouseenter', function() {
+      deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.2)';
+    });
+    deleteButton.addEventListener('mouseleave', function() {
+      deleteButton.style.backgroundColor = 'rgb(252, 144, 83, 0.8)';
+    });
 
-    // newDiv.appendChild(deleteButton);
+    newDiv.appendChild(deleteButton);
 
     const mealsList = document.getElementById('MealsList');
     mealsList.appendChild(newDiv); 
