@@ -86,7 +86,7 @@ function createNewDiv(event) {
     <br>Introduction:${text}
     <br>Ingredients:${ingredients}
     <br>Bread:${selectedOption}
-    <br>Sauce: ${sauce1}, ${sauce2}, and ${sauce3}`;
+    <br>Sauce: ${sauce1}, ${sauce2}, ${sauce3}`;
     newDiv.style.transition = 'transform 0.3s ease';
     newDiv.setAttribute('onmouseover', 'enlargeBox(this)');
     newDiv.setAttribute('onmouseout', 'resetBox(this)');
